@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -19,7 +18,7 @@ body{
     left: 0;
     width: 100%;
     padding: 20px 2.5%;
-    background: transparent;
+    /* background: #fff; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,25 +26,27 @@ body{
 }
 
 .logo{
-    font-size: 32px;
-    color: #fff;
+    font-size: 26px;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px #09001d);
+    /* filter: drop-shadow(0 0 5px #09001d); */
+    font-family: 'Kanit', sans-serif;
 }
 
 .navbar a{
-    font-size: 18px;
-    color: #fff;
+    font-size: 20px;
+    color: #000000;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     margin-left: 35px;
     transition: .3s;
+    font-family: 'Kanit', sans-serif;
 }
 
 .navbar a:hover,
 .navbar a.active{
-    color: #c40094;
+    color: #5B32AD;
 }
 
 .main{
@@ -78,13 +79,14 @@ body{
     align-items: center;
     flex-direction: column;
     text-align: center;
+    font-family: 'Montserrat', monospace;
 }
 
 .about-content h1{
     font-size: 78px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
+    color: #000000;
 
 }
 
@@ -92,5 +94,5 @@ body{
     font-size: 16px;
     font-weight: center;
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin-bottom: 30px;
+    color: #000000;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 
 * {
   margin: 0;
@@ -28,12 +29,12 @@ body{
 }
 
 .logo{
-    font-size: 32px;
+    font-size: 26px;
     color: #000000;
     text-decoration: none;
     font-weight: 700;
-    font-family: 'Kanit', sans-serif;
     /* filter: drop-shadow(0 0 5px #09001d); */
+    font-family: 'Kanit', sans-serif;
 }
 
 .navbar a{
@@ -73,7 +74,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', monospace;
 }
 
 .mode-content{
@@ -85,21 +86,21 @@ body{
 }
 
 .mode-content h1{
-    font-size: 80px;
-    font-weight: 500;
+    font-size: 60px;
+    font-weight: 700;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     color: #000000;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat', monospace;
 
 }
 
 .mode-content p{
     font-size: 14px;
-    font-weight: center;
+    font-weight: 400;
     color: #000000;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     /* margin-top: 5px; */
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat', monospace;
 }
 
 .mode-content .recreational-btn{
