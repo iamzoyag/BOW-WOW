@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -27,29 +28,32 @@ body{
 }
 
 .logo{
-    font-size: 32px;
-    color: #fff;
+    font-size: 26px;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px #09001d);
+    /* filter: drop-shadow(0 0 5px #09001d); */
+    font-family: 'Kanit', sans-serif;
 }
 
 .navbar a{
-    font-size: 18px;
-    color: #fff;
+    font-size: 20px;
+    color: #000000;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     margin-left: 35px;
     transition: .3s;
+    font-family: 'Kanit', sans-serif;
 }
 
-.navbar a:hover{
-    color: #c40094;
+.navbar a:hover,
+.navbar a.active{
+    color: #5B32AD;
 }
 
 .main{
     min-height: 100vh;
-    background: url('download.jpg') no-repeat;
+    background: url('pastel5.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -80,39 +84,177 @@ body{
 }
 
 .recre-content h1{
-    font-size: 30px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 50px;
+    font-weight: 1000;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     margin-bottom: 1px;
     position: absolute;
-    top: 150px;
-    left: 60px;
+    top: 100px;
+    left: 150px;
+    font-family: "Abel", sans-serif;
+    color: #000000;
 
 }
 
 .recre-content .horror-btn{
-    width: 700px;
-    height: 300px;
-    background: #c40094;
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 100px;
-    color: #fff;
+    font-size: 35px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 5px;
     position: absolute;
-    top: 200px;
-    left: 450px;
+    top: 360px;
+    left: 500px;
     transition: .5s;
+    font-family: "Micro 5", sans-serif;
 }
 
 .recre-content .horror-btn:hover{
-    background: #09001d;
+    background: #181A54;
+    box-shadow: none;
+}
+
+.recre-content .movies-btn{
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 35px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    transition: .5s;
+    font-family: "Micro 5", sans-serif;
+}
+
+.recre-content .movies-btn:hover{
+    background: #181A54;
+    box-shadow: none;
+}
+
+.recre-content .bolly-btn{
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 35px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 240px;
+    left: 500px;
+    transition: .5s;
+    font-family: "Micro 5", sans-serif;
+}
+
+.recre-content .bolly-btn:hover{
+    background: #181A54;
+    box-shadow: none;
+}
+
+.recre-content .holly-btn{
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 35px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 300px;
+    left: 820px;
+    transition: .5s;
+    font-family: "Micro 5", sans-serif;
+}
+
+.recre-content .holly-btn:hover{
+    background: #181A54;
+    box-shadow: none;
+}
+
+.recre-content .music-btn{
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 35px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 360px;
+    left: 820px;
+    transition: .5s;
+    font-family: "Micro 5", sans-serif;
+}
+
+.recre-content .music-btn:hover{
+    background: #181A54;
+    box-shadow: none;
+}
+
+.recre-content .unknown-btn{
+    width: 300px;
+    height: 55px;
+    background:#6f3596;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 35px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 420px;
+    left: 820px;
+    transition: .5s;
+    font-family: "Micro 5", sans-serif;
+}
+
+.recre-content .unknown-btn:hover{
+    background: #181A54;
     box-shadow: none;
 }
 
