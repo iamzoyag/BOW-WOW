@@ -10,10 +10,7 @@ import json
 import io
 from PIL import Image
 import hashlib
-import openai
 import pdfkit
-
-openai.api_key = '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'
 
 pdf_file_name = "daa.pdf"
 
@@ -37,7 +34,7 @@ def scrape(pdf_file_name):
     create_table(database_name)
     conn = sqlite3.connect(database_name)
     c = conn.cursor()
-    pdf = fitz.open(pdf_file_name) # filePath is a string that contains the path to the pdf
+    pdf = fitz.open(pdf_file_name)
     for pageNum, page in enumerate(pdf):
         dict = page.get_text("dict")
         blocks = dict["blocks"]
@@ -48,9 +45,7 @@ def scrape(pdf_file_name):
                     data = span['spans']
                     for lines in data:
                         sentence = lines['text']
-                        #strip the sentence of any leading or trailing whitespace
                         sentence = sentence.strip()
-                        #drop sentences that are empty strings or contain only whitespace or newlines or tabs or length 1
                         font_size = round(lines['size'])
                         if sentence == '' or sentence == ' ' or len(sentence) == 1:
                             continue
@@ -83,7 +78,7 @@ def getPageContent(pdf_file_name, page_number):
 
 def makeQuery(pdf_file_name, page_number):
     database_name = databaseName(pdf_file_name)
-    create_table(database_name)  # Ensure table exists
+    create_table(database_name)
     content = getPageContent(pdf_file_name, page_number)
     heading = getHeading(pdf_file_name, page_number)
     content_query = ''
@@ -95,34 +90,33 @@ def makeQuery(pdf_file_name, page_number):
     combined_query = "The slide topic is " + heading_query + " and the contents of the slides are " + content_query + "\nmake me brief study notes for this slide" 
     return heading_query, content_query, combined_query
 
-def generate_problems(pdf_file_name, page_number):
-    database_name = databaseName(pdf_file_name)
-    create_table(database_name)  # Ensure table exists
-    heading_query, content_query, combined_query = makeQuery(pdf_file_name, page_number)
-
-    # Use OpenAI to generate problems based on the content of the slide
-    prompt = f"Generate math problems related to the content of the slide: '{combined_query}'"
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=prompt,
-        max_tokens=150,  # Adjust as needed
-        n=3,  # Number of problems to generate
-        stop=None,  # Custom stop tokens if needed
-        temperature=0.7  # Adjust for creativity vs. accuracy
-    )
-
-    problems = [item.text.strip() for item in response.choices]
-    return problems
+def generate_problems_gemi(pdf_file_name, page_number):
+    gemini_url = "https://api.gemini.com/v1/generate_problems"
+    heading_query, content_query, _ = makeQuery(pdf_file_name, page_number)
+    payload = {
+        "slide_topic": heading_query,
+        "slide_content": content_query,
+        "num_problems": 3
+    }
+    try:
+        response = requests.post(gemini_url, json=payload)
+        if response.status_code == 200:
+            problems = response.json()["problems"]
+            return problems
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+            return None
+    except Exception as e:
+        print(f"Error generating problems via Gemini API: {str(e)}")
+        return None
 
 def generate_problem_set(problem_set_content, output_filename):
-    # Convert the problem set content into an HTML string
     html_content = "<html><body>"
     html_content += "<h1>Math Problems</h1>"
     for i, problem in enumerate(problem_set_content, start=1):
         html_content += f"<p><strong>Problem {i}:</strong><br>{problem}</p>"
     html_content += "</body></html>"
 
-    # Generate a PDF from the HTML content using pdfkit
     pdfkit_config = pdfkit.configuration()
     try:
         pdfkit.from_string(html_content, output_filename, configuration=pdfkit_config)
@@ -135,21 +129,18 @@ def generate_problem_set_pdf(pdf_file_name, output_filename):
     all_problems = []
 
     for i in range(1, num_pages):
-        # Generate problems for the current slide/page
-        problems = generate_problems(pdf_file_name, i)
+        problems = generate_problems_gemi(pdf_file_name, i)
         all_problems.extend(problems)
 
     generate_problem_set(all_problems, output_filename)
     
 def generate_lecture_notes_pdf(lecture_content, output_filename):
-    # Convert lecture content into an HTML string
     html_content = "<html><body>"
     html_content += "<h1>Lecture Notes</h1>"
     for i, content in enumerate(lecture_content, start=1):
         html_content += f"<div><strong>Slide {i}:</strong><br>{content}</div>"
     html_content += "</body></html>"
 
-    # Generate a PDF from the HTML content using pdfkit
     pdfkit_config = pdfkit.configuration()
     try:
         pdfkit.from_string(html_content, output_filename, configuration=pdfkit_config)
@@ -162,18 +153,12 @@ def generate_lecture_notes(pdf_file_name, output_filename):
     all_lecture_content = []
 
     for i in range(1, num_pages):
-        # Get content from the slide/page
         heading, content, _ = makeQuery(pdf_file_name, i)
-
-        # Generate problems for the current slide/page
-        problems = generate_problems(pdf_file_name, i)
-
-        # Combine content and problems into lecture notes
+        problems = generate_problems_gemi(pdf_file_name, i)
         lecture_notes = f"Slide Topic: {heading}\n\nContent:\n{content}\n\nProblems:\n"
         lecture_notes += "\n".join(problems)
         all_lecture_content.append(lecture_notes)
 
-    # Create lecture notes PDF
     generate_lecture_notes_pdf(all_lecture_content, output_filename)
     
 def extractImages(pdf_file_name):
@@ -182,7 +167,6 @@ def extractImages(pdf_file_name):
         os.makedirs(folder_name)
     pdf_file = fitz.open(pdf_file_name)
     saved_hashes = set()
-    #print("works")
     for page_index in range(len(pdf_file)):
         page = pdf_file[page_index]
         image_list = page.get_images()
@@ -197,13 +181,12 @@ def extractImages(pdf_file_name):
                 filename = f"{folder_name}/image{page_index+1}_{image_index}.{image_ext}"
                 image.save(open(filename, "wb"))
                 saved_hashes.add(image_hash)
+
 def main():
     pdf_file_name = "daa.pdf"
     output_filename = "all_problems.pdf"
     lecture_notes_filename = "lecture_notes.pdf"
     extractImages(pdf_file_name)
-    # for i, link in enumerate(video_links, start=1):
-    #     print(f"Video link for page {i}: {link}")
     generate_problem_set_pdf(pdf_file_name, output_filename)
     generate_lecture_notes(pdf_file_name, lecture_notes_filename)
     lecture_data_1 = {
@@ -213,5 +196,6 @@ def main():
         'problem_set': 'all_problems.pdf'
     }
     return lecture_data_1
+
 if __name__ == "__main__":
     main()
