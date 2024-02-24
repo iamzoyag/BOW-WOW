@@ -73,7 +73,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Montserrat', monospace;
+    font-family: 'Kanit', sans-serif;
 }
 
 .text-container {
@@ -91,11 +91,11 @@ body{
 }
 
 .mode-content h1{
-    font-size: 80px;
-    font-weight: 500;
+    font-size: 60px;
+    font-weight: 430;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     color: #000000;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Kanit', sans-serif;
 
 }
 
@@ -105,7 +105,7 @@ body{
     color: #000000;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     /* margin-top: 5px; */
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 .mode-content .button-container .recreational-btn{
