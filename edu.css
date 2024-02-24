@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
 
 * {
   margin: 0;
@@ -81,26 +83,28 @@ body{
 }
 
 .edu-content h1{
-    font-size: 30px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 40px;
+    font-weight: 1000;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     margin-bottom: 1px;
     position: absolute;
-    top: 120px;
-    left: 60px;
+    top: 100px;
+    left: 150px;
+    font-family: "Abel", sans-serif;
+    color: #000000;
 
 }
 
 .edu-content .quizzes-btn{
     width: 300px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 33px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -110,23 +114,24 @@ body{
     top: 250px;
     left: 400px;
     transition: .5s;
+    font-family: "Micro 5", sans-serif;
 }
 
 .edu-content .quizzes-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
 
 .edu-content .backpack-btn{
     width: 300px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 33px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -134,23 +139,24 @@ body{
     top: 262px;
     right: 400px;
     transition: .5s;
+    font-family: "Micro 5", sans-serif;
 }
 
 .edu-content .backpack-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
 
 .edu-content .progress-btn{
     width: 300px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 33px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -160,23 +166,24 @@ body{
     top: 400px;
     left: 400px;
     transition: .5s;
+    font-family: "Micro 5", sans-serif;
 }
 
 .edu-content .progress-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
 
 .edu-content .find-btn{
     width: 300px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 33px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -184,10 +191,11 @@ body{
     top: 412px;
     right: 400px;
     transition: .5s;
+    font-family: "Micro 5", sans-serif;
 }
 
 .edu-content .find-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
 
