@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -28,29 +29,31 @@ body{
 
 .logo{
     font-size: 32px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px #09001d);
+    font-family: 'Kanit', sans-serif;
+    /* filter: drop-shadow(0 0 5px #09001d); */
 }
 
 .navbar a{
-    font-size: 18px;
-    color: #fff;
+    font-size: 20px;
+    color: #000000;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     margin-left: 35px;
     transition: .3s;
+    font-family: 'Kanit', sans-serif;
 }
 
 .navbar a:hover,
 .navbar a.active{
-    color: #c40094;
+    color: #5B32AD;
 }
 
 .main{
     min-height: 100vh;
-    background: url('download.jpg') no-repeat;
+    background: url('./pastel1.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -70,6 +73,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Kanit', sans-serif;
 }
 
 .mode-content{
@@ -81,59 +85,65 @@ body{
 }
 
 .mode-content h1{
-    font-size: 60px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin-bottom: 1px;
+    font-size: 80px;
+    font-weight: 500;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
+    color: #000000;
+    font-family: 'Bebas Neue', sans-serif;
 
 }
 
 .mode-content p{
     font-size: 14px;
     font-weight: center;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: #000000;
+    /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
+    /* margin-top: 5px; */
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .mode-content .recreational-btn{
     width: 700px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 30px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     transition: .5s;
+    font-family: 'Micro 5', sans-serif;
 }
 
 .mode-content .recreational-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
 
 .mode-content .educational-btn{
     width: 700px;
     height: 55px;
-    background: #c40094;
+    background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 18px;
-    color: #fff;
+    font-size: 30px;
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     transition: .5s;
+    font-family: 'Micro 5', sans-serif;
 }
 
 .mode-content .educational-btn:hover{
-    background: #09001d;
+    background: #181A54;
     box-shadow: none;
 }
