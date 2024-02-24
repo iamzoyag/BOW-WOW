@@ -90,13 +90,13 @@ body{
 }
 
 .home-content h1{
-    font-size: 80px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 500;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     text-align: center;
     color: #000000;
     margin-bottom: 15px;
-    font-family: "EB Garamond", sans-serif;
+    font-family: "Kanit", sans-serif;
 
 }
 
@@ -110,8 +110,8 @@ body{
 } */
 
 .home-content .mode-btn{
-    width: 700px;
-    height: 55px;
+    width: 350px;
+    height: 70px;
     background: #6f3596;
     border: 2px solid #fff;
     outline: none;
