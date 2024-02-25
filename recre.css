@@ -53,7 +53,7 @@ body{
 
 .main{
     min-height: 100vh;
-    background: url('pastel5.jpg') no-repeat;
+    background: #D2B4DE;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -83,15 +83,24 @@ body{
     text-align: center;
 }
 
+.gif-genre {
+    position: fixed;
+    bottom: 0;
+   /*width: 50%;
+    left: 50%; 
+    transform: translateX(-50%);
+    animation: moveGif 5s linear infinite;*/
+}
+    
 .recre-content h1{
     font-size: 50px;
-    font-weight: 1000;
+    font-weight: 700;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     margin-bottom: 1px;
     position: absolute;
-    top: 100px;
+    top: 50px;
     left: 150px;
-    font-family: "Abel", sans-serif;
+    font-family: "Kanit", sans-serif;
     color: #000000;
 
 }
@@ -104,16 +113,16 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 5px;
     position: absolute;
-    top: 360px;
-    left: 500px;
+    top: 300px;
+    left: 600px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -131,16 +140,16 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 5px;
     position: absolute;
-    top: 300px;
-    left: 500px;
+    top: 240px;
+    left: 600px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -158,8 +167,8 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -167,7 +176,7 @@ body{
     margin-bottom: 5px;
     position: absolute;
     top: 240px;
-    left: 500px;
+    left: 200px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -185,8 +194,8 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
@@ -194,7 +203,7 @@ body{
     margin-bottom: 5px;
     position: absolute;
     top: 300px;
-    left: 820px;
+    left: 200px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -212,16 +221,16 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 5px;
     position: absolute;
-    top: 360px;
-    left: 820px;
+    top: 240px;
+    left: 1000px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -239,16 +248,16 @@ body{
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
-    font-size: 35px;
-    color: #000000;
+    font-size: 30px;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 5px;
     position: absolute;
-    top: 420px;
-    left: 820px;
+    top: 300px;
+    left: 1000px;
     transition: .5s;
     font-family: "Micro 5", sans-serif;
 }
@@ -257,6 +266,4 @@ body{
     background: #181A54;
     box-shadow: none;
 }
-
-
 

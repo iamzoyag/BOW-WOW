@@ -90,8 +90,8 @@ body{
 }
 
 .home-content h1{
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 40px;
+    font-weight: 700;
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     text-align: center;
     color: #000000;
@@ -112,14 +112,14 @@ body{
 
 .home-content .mode-btn{
     width: 350px;
-    height: 70px;
+    height: 65px;
     background: #6f3596;
     border: 2px solid #fff;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px #c40094;
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;

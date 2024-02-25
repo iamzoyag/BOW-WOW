@@ -37,7 +37,6 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-
 .navbar a{
     font-size: 20px;
     color: #000000;
@@ -55,7 +54,7 @@ body{
 
 .main{
     min-height: 100vh;
-    background: #ffffff;
+    background: #D2B4DE;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -169,7 +168,7 @@ body{
     position: absolute;
   }
 
-  .dog {
+.dog {
     top: -200px;
     left: 300px;
     height: 200px;
@@ -182,4 +181,23 @@ body{
     height: 150px;
     width: 150px;
   }
+
+.gif-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0; /* Center the container horizontally */
+    transform: translateX(-50%);
+    animation: moveGif 5s linear infinite; /* Adjust the animation duration and timing function as needed */
+}
+
+/* Keyframes for the animation */
+@keyframes moveGif {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
    

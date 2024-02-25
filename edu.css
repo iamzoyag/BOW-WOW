@@ -52,7 +52,7 @@ body{
 
 .main{
     min-height: 100vh;
-    background: url('pastel4.jpg') no-repeat;
+    background: #D2B4DE;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
