@@ -81,11 +81,27 @@ function checkAnswer() {
   }
 }
 
+
+// function showResult() {
+//   questionText.textContent = "";
+//   optionsContainer.innerHTML = "";
+//   submitBtn.style.display = "none";
+//   resultContainer.textContent = `Your score: ${score}/${questions.length}`;
+// }
+
 function showResult() {
   questionText.textContent = "";
   optionsContainer.innerHTML = "";
   submitBtn.style.display = "none";
-  resultContainer.textContent = `Your score: ${score}/${questions.length}`;
+  let message = "";
+  if (score === 0) {
+    message = "Do better next time!";
+  } else if (score === questions.length) {
+    message = "Perfect score!";
+  } else {
+    message = "Good job!";
+  }
+  resultContainer.innerHTML = `<p>Your score: ${score}/${questions.length}</p><p>${message}</p>`;
 }
 
 submitBtn.addEventListener("click", checkAnswer);
