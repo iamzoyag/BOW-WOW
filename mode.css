@@ -76,7 +76,7 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-.text-container {
+.text-container { 
     max-width: 600px;
     display: flex;
     align-items: center;
