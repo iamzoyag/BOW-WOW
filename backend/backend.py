@@ -91,7 +91,7 @@ def makeQuery(pdf_file_name, page_number):
     return heading_query, content_query, combined_query
 
 def generate_problems_gemi(pdf_file_name, page_number):
-    gemini_url = "https://api.gemini.com/v1/generate_problems"
+    gemini_url = "https://documentai.googleapis.com"
     heading_query, content_query, _ = makeQuery(pdf_file_name, page_number)
     payload = {
         "slide_topic": heading_query,
