@@ -13,6 +13,7 @@ import hashlib
 import pdfkit
 
 pdf_file_name = "daa.pdf"
+gemini_api_key= "AIzaSyAI06lDBiOuzLNB3IhagDZHF9Ca7XrDvV0"
 
 def databaseName(pdf_file_name):
     database_name = pdf_file_name.split('.')
@@ -90,16 +91,20 @@ def makeQuery(pdf_file_name, page_number):
     combined_query = "The slide topic is " + heading_query + " and the contents of the slides are " + content_query + "\nmake me brief study notes for this slide" 
     return heading_query, content_query, combined_query
 
-def generate_problems_gemi(pdf_file_name, page_number):
-    gemini_url = "https://documentai.googleapis.com"
+def generate_problems_gemi(pdf_file_name, page_number, gemini_api_key):
+    gemini_url = "https://language.googleapis.com/v2/documents:analyzeEntities"
     heading_query, content_query, _ = makeQuery(pdf_file_name, page_number)
     payload = {
         "slide_topic": heading_query,
         "slide_content": content_query,
         "num_problems": 3
     }
+    headers = {
+        "Authorization": f"Bearer {gemini_api_key}",
+        "Content-Type": "application/json"
+    }
     try:
-        response = requests.post(gemini_url, json=payload)
+        response = requests.post(gemini_url, json=payload, headers=headers)
         if response.status_code == 200:
             print(response)
             problems = response.json()["problems"]
@@ -110,6 +115,7 @@ def generate_problems_gemi(pdf_file_name, page_number):
     except Exception as e:
         print(f"Error generating problems via Gemini API: {str(e)}")
         return None
+
 
 def generate_problem_set(problem_set_content, output_filename):
     html_content = "<html><body>"
@@ -130,7 +136,7 @@ def generate_problem_set_pdf(pdf_file_name, output_filename):
     all_problems = []
 
     for i in range(1, num_pages):
-        problems = generate_problems_gemi(pdf_file_name, i)
+        problems = generate_problems_gemi(pdf_file_name, i, gemini_api_key)
         print(problems)
         all_problems.extend(problems)
 
@@ -156,7 +162,7 @@ def generate_lecture_notes(pdf_file_name, output_filename):
 
     for i in range(1, num_pages):
         heading, content, _ = makeQuery(pdf_file_name, i)
-        problems = generate_problems_gemi(pdf_file_name, i)
+        problems = generate_problems_gemi(pdf_file_name, i, gemini_api_key)
         lecture_notes = f"Slide Topic: {heading}\n\nContent:\n{content}\n\nProblems:\n"
         lecture_notes += "\n".join(problems)
         all_lecture_content.append(lecture_notes)
