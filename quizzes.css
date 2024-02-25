@@ -50,6 +50,20 @@ body{
     color: #5B32AD;
 }
 
+.header {
+    position: relative; /* Make the header a positioning context for absolute positioning */
+}
+
+.header img {
+    position: absolute; /* Position the image absolutely */
+    left: 225px;
+    top: 3px; /* Position the image at the top of its containing element */
+    right: 0; /* Position the image at the right side of its containing element */
+    width: 115px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    /* Add any other styling properties you want */
+}
+
 .main{
     min-height: 100vh;
     background-color: #D2B4DE;
