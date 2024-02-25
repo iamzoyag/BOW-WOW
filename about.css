@@ -51,7 +51,7 @@ body{
 
 .main{
     min-height: 100vh;
-    background: url('pastel2.jpg') no-repeat;
+    background: #D2B4DE;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -96,3 +96,10 @@ body{
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
     color: #000000;
 }
+
+.gif-about {
+    position: fixed;
+    bottom: 0;
+    width: 50px;
+}
+
