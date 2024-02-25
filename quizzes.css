@@ -119,11 +119,18 @@ body{
     font-family: 'Kode Mono', sans-serif;
 }
 
+.gif-container {
+    width: 100px;
+    bottom: 10px; 
+    position: absolute;
+    top: 285px; 
+    left: 50px; 
+}
+
 .quiz-option:hover {
     background: #181A54;
     box-shadow: none; 
 }
-  
 
 #submit-btn {
     display: block;
@@ -151,3 +158,4 @@ body{
     font-family: "Micro 5", sans-serif;
     color: #000000;
 }
+
