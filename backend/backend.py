@@ -101,6 +101,7 @@ def generate_problems_gemi(pdf_file_name, page_number):
     try:
         response = requests.post(gemini_url, json=payload)
         if response.status_code == 200:
+            print(response)
             problems = response.json()["problems"]
             return problems
         else:
@@ -130,6 +131,7 @@ def generate_problem_set_pdf(pdf_file_name, output_filename):
 
     for i in range(1, num_pages):
         problems = generate_problems_gemi(pdf_file_name, i)
+        print(problems)
         all_problems.extend(problems)
 
     generate_problem_set(all_problems, output_filename)
