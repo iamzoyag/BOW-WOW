@@ -88,8 +88,8 @@ body{
     /* text-shadow: 0 0 10px rgba(0,0,0,0.5); */
     margin-bottom: 1px;
     position: absolute;
-    top: 100px;
-    left: 150px;
+    top: 50px;
+    left: 520px;
     font-family: "Kanit", sans-serif;
     color: #000000;
 
@@ -203,14 +203,25 @@ body{
     position: fixed;
     bottom: 0;
     width: 100%;
-    left: 0; /* Center the container horizontally */
+    left: 0; 
 }
 
 .gif-edu2 {
     position: fixed;
     bottom: 0;
     width: 50%;
-    left: 15%; /* Center the container horizontally */
+    left: 15%; 
 
 }
+
+.gif-edu3 {
+    position: absolute;
+    bottom: 0;
+    width: 80%; 
+    top: 30px;
+    right: -770px;
+
+}
+
+
 

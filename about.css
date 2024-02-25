@@ -103,3 +103,12 @@ body{
     width: 50px;
 }
 
+.gif-about1 {
+    position: absolute;
+    bottom: 0;
+    width: 30%; 
+    top: 80px;
+    right: 50px;
+
+}
+
